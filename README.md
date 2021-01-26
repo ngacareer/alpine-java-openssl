@@ -20,12 +20,12 @@ Image supports version of Java : 7, 8, 9, 10, 11 (lastest)
 docker run -itd --name alpine-java-ssl ngacareer/alpine-java-ssl
 docker exec -it alpine-java-ssl bin/sh java -version
  ```
-- On Kubernetes
+ - On Kubernetes
  ```
 kubectl run alpine-java-ssl --image=ngacareer/alpine-java-ssl
 kubectl exec -it alpine-java-ssl bin/sh java -version
  ```
- - On OpenShift
+- On OpenShift
  ```
 oc run alpine-java-ssl --image=ngacareer/alpine-java-ssl
 oc exec alpine-java-ssl  -i -t /bin/sh java -version
