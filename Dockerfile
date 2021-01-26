@@ -21,7 +21,13 @@ RUN  rm -r /var/cache/apk \
 ENV JAVA_HOME=/usr/lib/jvm/java-$JAVA_VERSION-openjdk
 ENV PATH="$JAVA_HOME/bin:${PATH}"
 
-RUN java -version
-RUN javac -version
+RUN printf '%s\n' \
+  '#!/bin/sh' \
+  '' \
+  'while true' \
+  'do' \
+  'sleep 15' \
+  'done' \
+> /run/entrypoint.sh && chmod a+x /run/entrypoint.sh
 
-ENTRYPOINT ["/usr/bin/dumb-init"]
+ENTRYPOINT ["/usr/bin/dumb-init", "/run/entrypoint.sh"]
