@@ -18,19 +18,10 @@ RUN apk --no-cache add openjdk$CURL_VERSION --repository=http://dl-cdn.alpinelin
 RUN  rm -r /var/cache/apk \
     && rm -r /usr/share/man
 
-ENV JAVA_HOME=/usr/lib/jvm/java-$CURL_VERSION-openjdk
+ENV JAVA_HOME=/usr/lib/jvm/java-1.$CURL_VERSION-openjdk
 ENV PATH="$JAVA_HOME/bin:${PATH}"
 
 RUN java -version
 RUN javac -version
 
-RUN printf '%s\n' \
-  '#!/bin/sh' \
-  '' \
-  'while true' \
-  'do' \
-  'sleep 15' \
-  'done' \
-> /run/entrypoint.sh && chmod a+x /run/entrypoint.sh
-
-ENTRYPOINT ["/usr/bin/dumb-init", "/run/entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/dumb-init"]
