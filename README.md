@@ -7,7 +7,7 @@
 - <a href="https://github.com/ngacareer/alpine-java-ssl/blob/1.8/Dockerfile">1.8</a>
 - <a href="https://github.com/ngacareer/alpine-java-ssl/blob/9/Dockerfile">9</a>
 - <a href="https://github.com/ngacareer/alpine-java-ssl/blob/10/Dockerfile">10</a>
-- <a href="https://github.com/ngacareer/alpine-java-ssl/blob/main/Dockerfile">latest(11)</a>
+- <a href="https://github.com/ngacareer/alpine-java-ssl/blob/main/Dockerfile">latest (11)</a>
 
 ## Quick reference (cont.)
 - Where to file issues <a href="https://github.com/ngacareer/alpine-java-ssl/issues">https://github.com/ngacareer/alpine-java-ssl/issues</a>
