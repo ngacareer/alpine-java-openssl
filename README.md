@@ -26,17 +26,17 @@ docker exec -it alpine-java-ssl bin/sh
 # java -version
 # javac -version
  ```
- - On Kubernetes
+- On Kubernetes
  ```
 kubectl run alpine-java-ssl --image=ngacareer/alpine-java-ssl
-kubectl exec -it alpine-java-ssl bin/sh
+kubectl exec -it pod/alpine-java-ssl bin/sh
 # java -version
 # javac -version
  ```
 - On OpenShift
  ```
-oc run alpine-java-ssl --image=ngacareer/alpine-java-ssl
-oc exec alpine-java-ssl  -i -t /bin/sh
-# java -version
-# javac -version
+oc new-app --docker-image=ngacareer/alpine-java-ssl --name=alpine-java-ssl
+oc exec -ti $(oc get pod -l app=alpine-java-ssl -o jsonpath="{.items[0].metadata.name}") bin/sh
+$ java -version
+$ javac -version
  ```
