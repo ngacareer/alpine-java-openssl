@@ -7,7 +7,7 @@
 # Linkedin: https://www.linkedin.com/in/ngacareer/
 # website:  https://ngacareer.com
 
-FROM alpine:latest
+FROM ngacareer/alpine-curl
 
 #Update Jan,2021. Support jdk7, jdk8, jdk9, jdk10 and jdk11
 ENV JAVA_VERSION 7
@@ -21,13 +21,4 @@ RUN  rm -r /var/cache/apk \
 ENV JAVA_HOME=/usr/lib/jvm/java-1.$JAVA_VERSION-openjdk
 ENV PATH="$JAVA_HOME/bin:${PATH}"
 
-RUN printf '%s\n' \
-  '#!/bin/sh' \
-  '' \
-  'while true' \
-  'do' \
-  'sleep 15' \
-  'done' \
-> /run/entrypoint.sh && chmod a+x /run/entrypoint.sh
-
-ENTRYPOINT ["/usr/bin/dumb-init", "/run/entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/dumb-init", "entrypoint.sh"]
