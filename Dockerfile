@@ -7,7 +7,7 @@
 # Linkedin: https://www.linkedin.com/in/ngacareer/
 # website:  https://ngacareer.com
 
-FROM alpine:latest
+FROM ngacareer/alpine-curl
 
 #Update Jan,2021. Support jdk7, jdk8, jdk9, jdk10 and jdk11
 ENV JAVA_VERSION 11
