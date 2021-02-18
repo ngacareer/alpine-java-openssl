@@ -10,7 +10,7 @@
 FROM ngacareer/alpine-curl
 
 #Update Jan,2021. Support jdk7, jdk8, jdk9, jdk10 and jdk11
-ENV JAVA_VERSION 11
+ENV JAVA_VERSION 7
 
 RUN apk --update --no-cache add openssl dumb-init
 RUN apk --no-cache add openjdk$JAVA_VERSION --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
@@ -18,7 +18,7 @@ RUN apk --no-cache add openjdk$JAVA_VERSION --repository=http://dl-cdn.alpinelin
 RUN  rm -r /var/cache/apk \
     && rm -r /usr/share/man
 
-ENV JAVA_HOME=/usr/lib/jvm/java-$JAVA_VERSION-openjdk
+ENV JAVA_HOME=/usr/lib/jvm/java-1.$JAVA_VERSION-openjdk
 ENV PATH="$JAVA_HOME/bin:${PATH}"
 
 RUN printf '%s\n' \
