@@ -40,3 +40,8 @@ oc exec -ti $(oc get pod -l app=alpine-java-ssl -o jsonpath="{.items[0].metadata
 $ java -version
 $ javac -version
  ```
+## License
+
+Copyright © 2021 Ngacareer
+
+All contents licensed under the [MIT License](LICENSE)
